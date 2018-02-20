@@ -3,7 +3,15 @@ import Todo from './Todo';
 
 const ToDoList = props => {
 	return (
-		<ul>{props.list.map(item => <Todo item={item} key={item.id} />)}</ul>
+		<ul>
+			{props.list.map(item => (
+				<Todo
+					item={item}
+					key={item.id}
+					onRemoveToDo={props.onRemoveToDo.bind(this)}
+				/>
+			))}
+		</ul>
 	);
 };
 

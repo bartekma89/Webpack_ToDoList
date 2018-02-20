@@ -40,9 +40,9 @@ module.exports = {
 			filename: 'index.html',
 			inject: 'body',
 		}),
-		new UglifyJSPlugin(),
-		new OptimizeJSPlugin({
-			sourceMap: false,
-		}),
+		// new UglifyJSPlugin(),
+		// new OptimizeJSPlugin({
+		// 	sourceMap: false,
+		// }),
 	],
 };

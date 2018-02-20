@@ -40,7 +40,7 @@ class App extends React.Component {
 	removeToDo(id) {
 		const filteredArray = this.state.data.filter(item => item.id !== id);
 
-		this.setStade({
+		this.setState({
 			data: filteredArray,
 		});
 	}
@@ -49,7 +49,10 @@ class App extends React.Component {
 		return (
 			<div className={style.TodoApp}>
 				<Title title="ToDo List" number={this.state.data.length} />
-				<ToDoList list={this.state.data} />
+				<ToDoList
+					list={this.state.data}
+					onRemoveToDo={this.removeToDo.bind(this)}
+				/>
 			</div>
 		);
 	}
