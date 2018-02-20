@@ -1,16 +1,18 @@
 import React from 'react';
+import style from './Todo.css';
 
 const Todo = props => {
 	return (
-		<li>
+		<li className={style.li}>
 			{props.item.task}
-			<button onClick={props.onRemoveToDo.bind(this, props.item.id)}>
+			<button
+				className={style.btn}
+				onClick={props.onRemoveToDo.bind(this, props.item.id)}
+			>
 				Delete
 			</button>
 		</li>
 	);
 };
-
-Todo.propTypes = {};
 
 export default Todo;

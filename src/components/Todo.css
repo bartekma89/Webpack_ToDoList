@@ -1,0 +1,36 @@
+* {
+	box-sizing: border-box;
+}
+
+.btn {
+	margin: 1;
+	border: none;
+	font-size: 1em;
+	padding: 8px;
+	background-color: #40407a;
+	color: #fff;
+	cursor: pointer;
+	position: absolute;
+	right: 3px;
+	top: 3px;
+}
+
+.btn:hover {
+	background-color: #f8efba;
+	color: #000;
+}
+
+li {
+	z-index: 1;
+	position: relative;
+	cursor: pointer;
+	padding: 12px 8px 12px 12px;
+	list-style-type: none;
+	background-color: #ff5252;
+	font-size: 2em;
+	border-bottom: 1px solid #d1ccc0;
+}
+
+li:last-child {
+	border: none;
+}
