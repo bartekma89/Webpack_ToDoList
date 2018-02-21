@@ -25,7 +25,7 @@ if (env === 'production') {
 }
 
 module.exports = {
-	entry: ['./src/index.js', 'react-hot-loader/patch'],
+	entry: ['react-hot-loader/patch', './src/index.js'],
 
 	output: {
 		path: path.resolve(__dirname, 'build/'),

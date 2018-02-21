@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './Todo.css';
+import style from './ToDo.css';
 
-const Todo = props => {
+const ToDo = props => {
 	return (
 		<li className={style}>
 			{props.item.task}
@@ -15,4 +15,4 @@ const Todo = props => {
 	);
 };
 
-export default Todo;
+export default ToDo;

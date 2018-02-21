@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --config ./webpack.config.js",
     "prebuild": "npm run clean",
-    "build": "NODE_ENV=production webpack",
+    "build": "webpack",
     "clean": "rimraf build"
   },
   "keywords": [],
