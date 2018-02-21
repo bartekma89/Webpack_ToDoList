@@ -3,7 +3,7 @@ import style from './Todo.css';
 
 const Todo = props => {
 	return (
-		<li className={style.li}>
+		<li className={style}>
 			{props.item.task}
 			<button
 				className={style.btn}

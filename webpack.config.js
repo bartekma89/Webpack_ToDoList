@@ -3,6 +3,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeJSPlugin = require('optimize-js-plugin');
 
+let env = process.env.NODE_ENV || 'development';
+
+var plugins = [
+	new HtmlWebpackPlugin({
+		template: 'src/index.html',
+		filename: 'index.html',
+		inject: 'body',
+	}),
+];
+
+console.log('NODE_ENV: ', env);
+
+if (env === 'production') {
+	plugins.push(
+		new UglifyJSPlugin(),
+		new OptimizeJSPlugin({
+			sourceMap: false,
+		})
+	);
+}
+
 module.exports = {
 	entry: './src/index.js',
 
@@ -34,15 +55,6 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: 'src/index.html',
-			filename: 'index.html',
-			inject: 'body',
-		}),
-		new UglifyJSPlugin(),
-		new OptimizeJSPlugin({
-			sourceMap: false,
-		}),
-	],
+
+	plugins: plugins,
 };
