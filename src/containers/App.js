@@ -33,8 +33,7 @@ class App extends React.Component {
 			text: item,
 			id: uuid.v4(),
 		};
-
-		console.log('add');
+		console.log(this.state.text);
 
 		const data = [...this.state.data, todo];
 
@@ -51,16 +50,19 @@ class App extends React.Component {
 	}
 
 	onInputChange(event) {
-		const value = event.currentTarget.value;
+		let value = event.target.value;
+
+		console.log(value);
 
 		this.setState({
 			text: value,
 		});
 	}
 
-	onFormSubmit(event) {
+	onFormSubmit(input, event) {
 		event.preventDefault();
-		this.addToDo(this.state.text);
+		console.log(input);
+		this.addToDo(input);
 		this.setState({
 			text: '',
 		});
@@ -73,6 +75,7 @@ class App extends React.Component {
 				<ToDoForm
 					input={this.state.text}
 					onInputChange={this.onInputChange.bind(this)}
+					onFormSubmit={this.onFormSubmit.bind(this)}
 				/>
 				<ToDoList
 					list={this.state.data}
