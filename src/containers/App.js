@@ -30,8 +30,8 @@ class App extends React.Component {
 
 	addToDo(item) {
 		const todo = {
-			text: item,
 			id: uuid.v4(),
+			task: item,
 		};
 		console.log(this.state.text);
 

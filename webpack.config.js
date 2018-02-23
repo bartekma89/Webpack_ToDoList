@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeJSPlugin = require('optimize-js-plugin');
@@ -11,6 +12,7 @@ var plugins = [
 		filename: 'index.html',
 		inject: 'body',
 	}),
+	new webpack.HotModuleReplacementPlugin(),
 ];
 
 console.log('NODE_ENV: ', env);
@@ -27,9 +29,17 @@ if (env === 'production') {
 module.exports = {
 	entry: ['react-hot-loader/patch', './src/index.js'],
 
+	devServer: {
+		contentBase: path.join(__dirname, 'build'),
+		hot: true,
+	},
+
+	devtool: 'eval',
+
 	output: {
-		path: path.resolve(__dirname, 'build/'),
+		path: path.resolve(__dirname, 'build'),
 		filename: 'index.bundle.js',
+		publicPath: '/',
 	},
 
 	module: {
