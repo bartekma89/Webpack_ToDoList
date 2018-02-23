@@ -33,7 +33,6 @@ class App extends React.Component {
 			id: uuid.v4(),
 			task: item,
 		};
-		console.log(this.state.text);
 
 		const data = [...this.state.data, todo];
 
