@@ -1,2 +1,3 @@
 # Webpack_ToDoList
-npm install -> npm run build
+
+npm init -> npm install -> npm run build -> npm start
